@@ -1,0 +1,47 @@
+[Variables]
+IconTimeWaiting=8
+TextTimeWaiting=8
+Size1=0
+FontColor=250,247,249
+Icons=Icons9
+ImageColor=224,67,222
+
+
+
+
+;========================================================================================================================================================;
+;                                                                       Locations                                                                        ;
+;========================================================================================================================================================;
+
+AmazonVideo=["www.primevideo.com"]
+Blogger=
+Calculator=["C:\Windows\System32\calc.exe"]
+Calendar=["#@#Shortcuts\calendar.lnk"]
+chrome=["Chrome.exe"]
+Deviantart=["https://www.deviantart.com/"]
+discord=["C:\Users\%Username%\AppData\Local\Discord\Update.exe --disable-windows10-custom-titlebar --processStart Discord.exe"]
+Downloads=["Shell:::{374DE290-123F-4565-9164-39C4925E467B}"]
+Edge=["C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"]
+facebook=["https://www.facebook.com/"]
+Filmora=["C:\Program Files\Wondershare\Wondershare Filmora\Wondershare Filmora X.exe"]
+gmail=["https://www.Gmail.com/"]
+google=["https://www.Google.com/"]
+Instagram=["https://www.Instagram.com/"]
+Music=["Shell:::{1CF1260C-4DD0-4ebb-811F-33C572699FDE}"]
+onedrive=["shell:OneDrive"]
+photoshop=["C:\Program Files\Adobe\Adobe Photoshop 2021\Photoshop.exe"]
+Pinterest=["https://www.pinterest.com/"]
+reddit=["https://www.Reddit.com/"]
+settings=["Control"]
+Skype=["https://www.Skype.com/"]
+SnapChat=["https://www.Snapchat.com/"]
+Spotify=["https://www.Spotify.com/"]
+Start=["shell:Start Menu"]
+Telegram=["C:\Users\%Username%\AppData\Roaming\Telegram Desktop\Telegram.exe"]
+ThisPC=["Shell:::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"]
+RecycleBin=["Shell:::{645FF040-5081-101B-9F08-00AA002F954E}"]
+vlc=["C:\Program\VLC\vlc.exe"]
+Whatsapp=["https://www.whatsapp.com/"]
+Wikipedia=
+youtube=["https://www.YouTube.com/"]
+Color1=&'1@

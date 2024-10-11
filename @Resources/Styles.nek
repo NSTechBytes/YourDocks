@@ -1,0 +1,54 @@
+
+[MeasureSize1]
+Measure=Plugin
+Plugin=ActionTimer
+ActionList1=Repeat SizeUp,#IconTimeWaiting#,4
+SizeUp=[!SetOption MeterIcon1 W "(Clamp([MeterIcon1:W]+5,50,75))"][!SetOption MeterIcon1 Y "(Clamp([MeterIcon1:Y]-2,10,20))][!SetOption MeterIcon1 X "(Clamp([MeterIcon1:X]-2,10,40))][!UpdateMeterGroup Icons][!Redraw]
+ActionList2=Repeat SizeDn,#IconTimeWaiting#,4
+SizeDn=[!SetOption MeterIcon1 W "(Clamp([MeterIcon1:W]-5,50,75))"][!SetOption MeterIcon1 Y "(Clamp([MeterIcon1:Y]+2,10,20))][!SetOption MeterIcon1 X "(Clamp([MeterIcon1:X]+2,10,40))][!UpdateMeterGroup Icons][!Redraw]
+IgnoreWarnings=1
+DynamicVariables=1
+
+
+[MeasureSizeUpText1]
+Measure=Plugin
+Plugin=ActionTimer
+Group=Sizers
+ActionList1=ChangeSizeStart|Wait #TextTimeWaiting1#|Repeat ChangeSizeCalc,#TextTimeWaiting#,11
+ChangeSizeStart=[!SetVariable Size1 "#Size1#"][!UpdateMeasureGroup Sizers][!UpdateMeter MeterText1][!Redraw]
+ChangeSizeCalc=[!SetVariable Size1 "(Clamp(#Size1#+0.8,0,10))"][!UpdateMeasureGroup Sizers][!UpdateMeter MeterText1][!Redraw]
+DynamicVariables=1
+
+[MeasureSizeDownText1]
+Measure=Plugin
+Plugin=ActionTimer
+Group=Sizers
+ActionList1=ChangeSizeStart|Wait #TextTimeWaiting#|Repeat ChangeSizeCalc,#TextTimeWaiting#,11
+ChangeSizeStart=[!SetVariable Size1 "#Size1#"][!UpdateMeasureGroup Sizers][!UpdateMeter MeterText1][!Redraw]
+ChangeSizeCalc=[!SetVariable Size1 "(Clamp(#Size1#-0.8,0,10))"][!UpdateMeasureGroup Sizers][!UpdateMeter MeterText1][!Redraw]
+DynamicVariables=1
+
+
+[Image]
+X=40
+Y=20
+W=50
+MouseOverAction=[!CommandMeasure MeasureSize1 "Stop 2"][!CommandMeasure MeasureSize1 "Execute 1"][!CommandMeasure MeasureSizeDownText1 "Stop 1"][!CommandMeasure MeasureSizeUpText1 "Execute 1"]
+MouseLeaveAction=[!CommandMeasure MeasureSize1 "Stop 1"][!CommandMeasure MeasureSize1 "Execute 2"][!CommandMeasure MeasureSizeUpText1 "Stop 1"][!CommandMeasure MeasureSizeDownText1 "Execute 1"]
+ImageAlpha=255
+AntiAlias=1
+PreserveAspectRatio=1
+ImageTint=#ImageColor#
+Group=Icons
+[Text]
+StringAlign=CenterCenter
+FontFace=Zona Pro ExtraLight
+FontSize=#Size1#
+FontColor=#FontColor#
+StringEffect=Shadow
+FontEffectColor=65,65,65,80
+X=66
+Y=90
+Text=Amazon prime
+AntiAlias=1
+DynamicVariables=1

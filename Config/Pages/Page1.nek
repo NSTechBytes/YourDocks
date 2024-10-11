@@ -1,0 +1,261 @@
+[General_S]
+Meter=String
+Text=General
+FontFace=Roboto
+FontWeight=900
+AntiAlias=1
+FontSize=20
+FontColor=255,255,255
+X=150
+Y=30
+
+[m.StartAction]
+Measure=String
+OnUpdateAction=[!SetOption #Set.Blur#_Shape MeterStyle "Blur_Update" ][!SetOption #Set.BlurCorner#_Shape1 MeterStyle "Blur_Update" ][!UpdateMeterGroup Update]
+
+
+[Blur_Update]
+Shape=Rectangle 0,0,70,25,4 | StrokeWidth 0 | Fill Color 69, 174, 19
+Y=r
+DynamicVariables=1
+[Blur_Shape1]
+Shape=Rectangle 0,0,70,25,4 | StrokeWidth 0 | Fill Color 231, 143, 54,100
+Y=r
+DynamicVariables=1
+
+;========================================================================================================================================================;
+;                                                                          Text                                                                          ;
+;========================================================================================================================================================;
+
+[Text_S]
+Meter=String
+Text=Font Size
+FontFace=Roboto
+AntiAlias=1
+FontSize=12
+FontColor=255,255,255
+X=150
+Y=100
+
+[Text_Shape]
+Meter=Shape
+Shape=Rectangle 0,0,100,25,4 | StrokeWidth 0 | Fill Color 231, 143, 54,100
+X=240r
+Y=r
+DynamicVariables=1
+LeftMouseUpAction=[!PluginBang "MeterInput ExecuteBatch 1"]
+
+[Text String]
+Meter=String
+StringAlign=Center
+FontColor=255,255,255
+FontFace=Roboto
+FontSize=11
+X=(100/2)r
+Y=3r
+Text=#Size1#
+AntiAlias=1
+StringAlign=CenterCenter
+
+[Div]
+Meter=Shape
+Shape=Rectangle 0,0,340,1 | StrokeWidth 0 | Fill Color 255,255,255
+DynamicVariables=1
+X=150
+Y=30r
+
+;========================================================================================================================================================;
+;                                                                          FontColor                                                               ;
+;========================================================================================================================================================;
+
+[FontColor_S]
+Meter=String
+Text=Font Color
+FontFace=Roboto
+AntiAlias=1
+FontSize=12
+FontColor=255,255,255
+X=150
+Y=140
+
+[Color]
+Meter=Shape
+Shape=Rectangle 0,0,20,20,15 | StrokeWidth 0 | Fill Color #FontColor#
+DynamicVariables=1
+X=320r
+Y=r
+LeftMouseUpAction=["#@#Addons\RainRGB4.exe" "VarName=FontColor" "FileName=#@#Vars.nek"][!Refresh *]
+
+[MeterFontColor]
+Meter=String
+StringAlign=Center
+FontFace=Roboto
+FontSize=12
+X=260
+Y=r
+W=100
+Text=
+AntiAlias=1
+SolidColor=#FontColor#
+
+
+[Div_2]
+Meter=Shape
+Shape=Rectangle 0,0,340,1 | StrokeWidth 0 | Fill Color 255,255,255
+DynamicVariables=1
+X=150
+Y=30r
+
+;========================================================================================================================================================;
+;                                                                          IconTimeWaiting                                                             ;
+;========================================================================================================================================================;
+
+[IconTimeWaiting_S]
+Meter=String
+Text=IconTimeWaiting
+FontFace=Roboto
+AntiAlias=1
+FontSize=12
+FontColor=255,255,255
+X=150
+Y=10r
+
+[IconTimeWaiting_Shape]
+Meter=Shape
+Shape=Rectangle 0,0,100,25,4 | StrokeWidth 0 | Fill Color 231, 143, 54,100
+X=240r
+Y=r
+DynamicVariables=1
+LeftMouseUpAction=[!PluginBang "MeterInput2 ExecuteBatch 1"]
+
+
+[IconTimeWaiting_F]
+Meter=String
+StringAlign=Center
+FontColor=255,255,255
+FontFace=Roboto
+FontSize=11
+X=(100/2)r
+Y=3r
+Text=#IconTimeWaiting#
+AntiAlias=1
+StringAlign=CenterCenter
+
+[Div_3]
+Meter=Shape
+Shape=Rectangle 0,0,340,1 | StrokeWidth 0 | Fill Color 255,255,255
+DynamicVariables=1
+X=150
+Y=30r
+
+;========================================================================================================================================================;
+;                                                                          TextTimeWaiting                                                             ;
+;========================================================================================================================================================;
+
+[TextTimeWaiting_S]
+Meter=String
+Text=TextTimeWaiting
+FontFace=Roboto
+AntiAlias=1
+FontSize=12
+FontColor=255,255,255
+X=150
+Y=10r
+
+[TextTimeWaiting_Shape]
+Meter=Shape
+Shape=Rectangle 0,0,100,25,4 | StrokeWidth 0 | Fill Color 231, 143, 54,100
+X=240r
+Y=r
+DynamicVariables=1
+LeftMouseUpAction=[!PluginBang "MeterInput3 ExecuteBatch 1"]
+
+
+[TextTimeWaiting_F]
+Meter=String
+StringAlign=Center
+FontColor=255,255,255
+FontFace=Roboto
+FontSize=11
+X=(100/2)r
+Y=3r
+Text=#TextTimeWaiting#
+AntiAlias=1
+StringAlign=CenterCenter
+
+[Div_3]
+Meter=Shape
+Shape=Rectangle 0,0,340,1 | StrokeWidth 0 | Fill Color 255,255,255
+DynamicVariables=1
+X=150
+Y=30r
+
+
+
+
+;========================================================================================================================================================;
+;                                                                        Measures                                                                        ;
+;========================================================================================================================================================;
+
+[MeterInput]
+Measure=Plugin
+Plugin=InputText.dll
+StringAlign=Center
+FontFace=Roboto
+FontSize=12
+X=390
+Y=100
+W=100
+H=25
+AntiAlias=1
+FocusDismiss=1
+SolidColor=231, 143, 54
+FontColor=255,255,255
+Command1=[!WriteKeyValue Variables Size1 "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+DefaultValue="#Size1#"
+DynamicVariables=1
+
+
+
+[MeterInput2]
+Measure=Plugin
+Plugin=InputText.dll
+StringAlign=Center
+FontFace=Roboto
+FontSize=12
+X=390
+Y=180
+W=100
+H=25
+AntiAlias=1
+FocusDismiss=1
+SolidColor=231, 143, 54
+FontColor=255,255,255
+Command1=[!WriteKeyValue Variables IconTimeWaiting "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+DefaultValue="#IconTimeWaiting#"
+DynamicVariables=1
+
+[MeterInput3]
+Measure=Plugin
+Plugin=InputText.dll
+StringAlign=Center
+FontFace=Roboto
+FontSize=12
+X=390
+Y=220
+W=100
+H=25
+AntiAlias=1
+FocusDismiss=1
+SolidColor=231, 143, 54
+FontColor=255,255,255
+Command1=[!WriteKeyValue Variables TextTimeWaiting "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+DefaultValue="#TextTimeWaiting#"
+DynamicVariables=1
+
+
+
+
+
+
+
